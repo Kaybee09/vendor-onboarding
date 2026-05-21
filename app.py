@@ -33,3 +33,37 @@ def vendor_form():
         # Compliance Information
         anti_bribery = request.form.get("anti_bribery")
         iso_certification = request.form.get("iso_certification")
+        
+                # Validation
+        if not company_name:
+            errors["company_name"] = "Company name is required"
+
+        if not registration_number:
+            errors["registration_number"] = "Registration number is required"
+
+        if not country:
+            errors["country"] = "Country is required"
+
+        if not address:
+            errors["address"] = "Address is required"
+
+        if not primary_contact_name:
+            errors["primary_contact_name"] = "Primary contact name is required"
+
+        if not email:
+            errors["email"] = "Email is required"
+
+        if not phone:
+            errors["phone"] = "Phone number is required"
+
+        if not bank_name:
+            errors["bank_name"] = "Bank name is required"
+
+        if not account_name:
+            errors["account_name"] = "Account name is required"
+
+        if not iban:
+            errors["iban"] = "IBAN/Account number is required"
+
+        if not currency:
+            errors["currency"] = "Currency is required"
