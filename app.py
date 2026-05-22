@@ -67,3 +67,43 @@ def vendor_form():
 
         if not currency:
             errors["currency"] = "Currency is required"
+        
+        # If no validation errors
+        if len(errors) == 0:
+            print("\n===== Vendor Submission =====")
+
+            print("\n--- Company Information ---")
+            print(f"Company Name: {company_name}")
+            print(f"Registration Number: {registration_number}")
+            print(f"VAT Number: {vat_number}")
+            print(f"Country: {country}")
+            print(f"Address: {address}")
+            print(f"Website: {website}")
+
+            print("\n--- Contact Information ---")
+            print(f"Primary Contact: {primary_contact_name}")
+            print(f"Email: {email}")
+            print(f"Phone: {phone}")
+            print(f"Finance Contact: {finance_contact}")
+            print(f"Legal Contact: {legal_contact}")
+
+            print("\n--- Banking Information ---")
+            print(f"Bank Name: {bank_name}")
+            print(f"Account Name: {account_name}")
+            print(f"IBAN: {iban}")
+            print(f"SWIFT: {swift}")
+            print(f"Currency: {currency}")
+
+            print("\n--- Compliance Information ---")
+            print(f"Anti-Bribery Accepted: {anti_bribery}")
+            print(f"ISO Certification: {iso_certification}")
+
+            print("\n==============================")
+
+            return "Vendor form submitted successfully! Check terminal output."
+
+    return render_template("vendor_form.html", errors=errors)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
