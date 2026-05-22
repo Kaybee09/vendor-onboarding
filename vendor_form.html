@@ -62,3 +62,93 @@
     </style>
 </head>
 <body>
+
+    <div class="container">
+            {% if errors.primary_contact_name %}
+                <div class="error">{{ errors.primary_contact_name }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email">
+            {% if errors.email %}
+                <div class="error">{{ errors.email }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Phone *</label>
+            <input type="text" name="phone">
+            {% if errors.phone %}
+                <div class="error">{{ errors.phone }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Finance Contact</label>
+            <input type="text" name="finance_contact">
+        </div>
+
+        <div class="form-group">
+            <label>Legal Contact</label>
+            <input type="text" name="legal_contact">
+        </div>
+
+        <h2>Banking Information</h2>
+
+        <div class="form-group">
+            <label>Bank Name *</label>
+            <input type="text" name="bank_name">
+            {% if errors.bank_name %}
+                <div class="error">{{ errors.bank_name }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Account Name *</label>
+            <input type="text" name="account_name">
+            {% if errors.account_name %}
+                <div class="error">{{ errors.account_name }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>IBAN / Account Number *</label>
+            <input type="text" name="iban">
+            {% if errors.iban %}
+                <div class="error">{{ errors.iban }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>SWIFT/BIC</label>
+            <input type="text" name="swift">
+        </div>
+
+        <div class="form-group">
+            <label>Currency *</label>
+            <input type="text" name="currency">
+            {% if errors.currency %}
+                <div class="error">{{ errors.currency }}</div>
+            {% endif %}
+        </div>
+
+        <h2>Compliance Information</h2>
+
+        <div class="form-group">
+            <label>Anti-Bribery Declaration</label>
+            <input type="text" name="anti_bribery">
+        </div>
+
+        <div class="form-group">
+            <label>ISO Certification</label>
+            <input type="text" name="iso_certification">
+        </div>
+
+        <button type="submit">Submit Vendor Form</button>
+    </form>
+</div>
+
+</body>
+</html>
