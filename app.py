@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def vendor_form():
-    errors = {}
+    return render_template("vendor_form.html")
 
     if request.method == "POST":
         # Company Information
