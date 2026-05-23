@@ -5,9 +5,11 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def vendor_form():
-    return render_template("vendor_form.html")
+
+    errors = {}
 
     if request.method == "POST":
+
         # Company Information
         company_name = request.form.get("company_name")
         registration_number = request.form.get("registration_number")
@@ -33,8 +35,8 @@ def vendor_form():
         # Compliance Information
         anti_bribery = request.form.get("anti_bribery")
         iso_certification = request.form.get("iso_certification")
-        
-                # Validation
+
+        # Validation
         if not company_name:
             errors["company_name"] = "Company name is required"
 
@@ -67,9 +69,10 @@ def vendor_form():
 
         if not currency:
             errors["currency"] = "Currency is required"
-        
+
         # If no validation errors
         if len(errors) == 0:
+
             print("\n===== Vendor Submission =====")
 
             print("\n--- Company Information ---")
@@ -102,7 +105,10 @@ def vendor_form():
 
             return "Vendor form submitted successfully! Check terminal output."
 
-    return render_template("vendor_form.html", errors=errors)
+    return render_template(
+        "vendor_form.html",
+        errors=errors
+    )
 
 
 if __name__ == "__main__":
