@@ -82,7 +82,6 @@ def vendor_form():
             print(f"Country: {country}")
             print(f"Address: {address}")
             print(f"Website: {website}")
-
             print("\n--- Contact Information ---")
             print(f"Primary Contact: {primary_contact_name}")
             print(f"Email: {email}")
@@ -103,7 +102,7 @@ def vendor_form():
 
             print("\n==============================")
 
-            return "Vendor form submitted successfully! Check terminal output."
+            return "Vendor form submitted successfully! Check the terminal output."
 
     return render_template(
         "vendor_form.html",
